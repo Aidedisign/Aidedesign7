@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UCC Hostel Finder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>UCC Hostel Finder</h1>
+    <p>Find and reserve your hostel before the academic year begins.</p>
+  </header>
+
+  <section class="filters">
+    <input type="text" id="searchBox" placeholder="Search by hostel name or location..." />
+    <select id="priceFilter">
+      <option value="all">All Prices</option>
+      <option value="0-2000">Under GHS 2,000</option>
+      <option value="2000-3500">GHS 2,000 – 3,500</option>
+      <option value="3500-99999">Above GHS 3,500</option>
+    </select>
+  </section>
+
+  <main id="hostelList" class="hostel-grid"></main>
+
+  <footer>
+    <p>© 2025 UCC Hostel Finder — Built for students, by students.</p>
+  </footer>
+
+  <!-- Reservation Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle">Reserve Hostel</h2>
+      <p id="modalInfo"></p>
+      <form id="reserveForm" onsubmit="submitReservation(event)">
+        <input type="text" id="studentName" placeholder="Your Full Name" required />
+        <input type="email" id="studentEmail" placeholder="Your Email" required />
+        <input type="tel" id="studentPhone" placeholder="Phone Number" required />
+        <button type="submit">Confirm Reservation</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
